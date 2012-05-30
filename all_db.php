@@ -348,6 +348,11 @@
 		$misc->printTabs('server','databases');
 		$misc->printMsg($msg);
 
+		//Heroku Patch
+		$url = 'redirect.php?subject=database&server='. $conf['servers'][0]['host'] . '%3A'. $conf['servers'][0]['port'] . '%3Aallow&database=' . $conf['servers'][0]['defaultdb'];
+		echo "<a href='{$url}'>Go Database</a>";
+		return;
+
 		$databases = $data->getDatabases();
 
 		$columns = array(
